@@ -91,16 +91,20 @@ CREATE TABLE `schedule` (
   `hall` int(255) NOT NULL,
   `date` datetime(6) NOT NULL,
   `film` varchar(255) NOT NULL,
+  `Zone` varchar(255) NOT NULL, -- Что-то типа такого?
   `price` int(255) NOT NULL,
   `cinema` varchar(255) NOT NULL
-) 
+)
 
-INSERT INTO `schedule` (`id`, `hall`, `date`, `film`, `price`, `cinema`) VALUES
-(1, 3, '2019-11-13 00:00:00.000000', 'Snatch', 200, 'Звезда'),
-(2, 2, '2019-11-28 00:00:00.000000', 'Terminator', 300, 'Восход'),
-(3, 6, '2019-11-30 00:00:00.000000', 'Terminator', 310, 'Заря'),
-(4, 1, '2019-11-27 00:00:00.000000', 'Avengers', 228, 'Восход'),
-(5, 4, '2019-12-02 00:00:00.000000', 'Terminator', 200, 'Звезда');
+INSERT INTO `schedule` (`id`, `hall`, `date`, `film`, `Zone`, `price`, `cinema`) VALUES
+(1, 3, '2019-11-13 00:00:00.000000', 'Snatch', 'VIP', 200, 'Звезда'),
+(2, 2, '2019-11-28 00:00:00.000000', 'Terminator', 'VIP', 300, 'Восход'),
+(3, 6, '2019-11-30 00:00:00.000000', 'Terminator', 'REGULAR', 310, 'Заря'),
+(4, 1, '2019-11-27 00:00:00.000000', 'Avengers', 'VIP', 228, 'Восход'),
+(5, 4, '2019-12-02 00:00:00.000000', 'Terminator', 'REGULAR', 200, 'Звезда'),
+(6, 2, '2019-12-24 00:00:00.000000', 'Terminator', 'REGULAR', 300, 'Восход'),
+(7, 1, '2019-12-25 00:00:00.000000', 'Terminator', 'VIP', 310, 'Восход'),
+(8, 1, '2019-12-18 00:00:00.000000', 'Terminator', 'REGULAR', 228, 'Заря');
 
 ALTER TABLE `schedule`
   ADD PRIMARY KEY (`id`), -- Уникальный id
